@@ -14,6 +14,7 @@ const FirebaseAuthState = ({ children }) => {
 
   useEffect(() => {
     return firebaseAuth.onIdTokenChanged(async (user) => {
+      console.log("onIdTokenChanged triggered");
       if (!user) {
         dispatch({
           type: "LOGOUT",
